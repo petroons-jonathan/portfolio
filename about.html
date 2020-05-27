@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Jonathan Petroons</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Hidden -->
+    <div id="navigation">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html" class="active-link">À propos</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner" id="sec">
+
+        <!-- Toggle Section -->
+        <header>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+
+        <!-- Content Section-->
+        <div class="content">
+            <h2><span>À propos</span></h2>
+            <p>Ancien apprenant chez <span>BeCode Charleroi</span>, j'ai soif d'apprendre et me passionne pour le
+                développement
+                front-end.</p>
+            <p>Je m'intéresse aussi beaucoup à Flutter pour le développement d'application.</p>
+            <div class="skills">
+                <div class="skillBox">
+                    <p>Html5</p>
+                    <p>75%</p>
+                    <div class="skill">
+                        <div class="skill_level" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skillBox">
+                    <p>Css3</p>
+                    <p>70%</p>
+                    <div class="skill">
+                        <div class="skill_level" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skillBox">
+                    <p>JavaScript</p>
+                    <p>60%</p>
+                    <div class="skill">
+                        <div class="skill_level" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="skillBox">
+                    <p>Flutter</p>
+                    <p>50%</p>
+                    <div class="skill">
+                        <div class="skill_level" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="skillBox">
+                    <p>GitHub</p>
+                    <p>65%</p>
+                    <div class="skill">
+                        <div class="skill_level" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="portoflio.html">Voir les projets</a>
+        </div>
+
+        <!-- Social Section-->
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/jonathan.petroons" target="_blank"><img src="assets/img/facebook.png"></a></li>
+            <li><a href="#" target="_blank"><img src="assets/img/twitter.png"></a></li>
+            <li><a href="https://www.linkedin.com/in/jonathan-petroons/" target="_blank"><img src="assets/img/linkedin.png"></a></li>
+            <li><a href="https://github.com/petroons-jonathan" target="_blank"><img src="assets/img/github.png"></a></li>
+        </ul>
+
+    </section>
+
+
+    <!-- Toggle Function -->
+    <script type="text/javascript">
+        window.onload = () => {
+            let bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+            bannerNode.parentNode.removeChild(bannerNode);
+        }
+
+        function toggle() {
+            let sec = document.getElementById("sec");
+            let nav = document.getElementById("navigation");
+
+            sec.classList.toggle("active");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

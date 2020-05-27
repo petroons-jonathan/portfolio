@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Jonathan Petroons</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Hidden -->
+    <div id="navigation">
+        <ul>
+            <li><a href="index.html" class="active-link">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner sm-padding" id="sec">
+
+        <!-- Toggle Section -->
+        <header>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+
+        <!-- Content Section-->
+        <div class="content">
+            <h2>Hello World, <br />I'm <span>Jonathan Petroons</span></h2>
+            <p>|| Front-End Developpeur ||
+                Flutter Developpeur ||
+                Nokia 3310 Addict ||
+                Dresseur de Pokemon ||</p>
+            <a href="about.html">En savoir plus</a>
+        </div>
+
+        <!-- Social Section-->
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/jonathan.petroons" target="_blank"><img src="assets/img/facebook.png"></a></li>
+            <li><a href="#" target="_blank"><img src="assets/img/twitter.png"></a></li>
+            <li><a href="https://www.linkedin.com/in/jonathan-petroons/" target="_blank"><img src="assets/img/linkedin.png"></a></li>
+            <li><a href="https://github.com/petroons-jonathan" target="_blank"><img src="assets/img/github.png"></a></li>
+        </ul>
+
+    </section>
+
+
+    <!-- Toggle Function -->
+    <script type="text/javascript">
+
+        window.onload = () => {
+            let bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+            bannerNode.parentNode.removeChild(bannerNode);
+        }
+
+        function toggle() {
+            let sec = document.getElementById("sec");
+            let nav = document.getElementById("navigation");
+
+            sec.classList.toggle("active");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

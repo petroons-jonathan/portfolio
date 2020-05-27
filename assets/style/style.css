@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+
+header {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 150px;
+    transition: .5s;
+    z-index: 1000;
+}
+
+header #toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+header #toggle:before {
+    content: "";
+    position: absolute;
+    top:10px;
+    width:100%;
+    height: 4px;
+    background: #fff;
+    transition: .3s;
+}
+
+header #toggle:after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height:4px;
+    background: #fff;
+    transition:.3s;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding:100px 150px;
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 1s;
+    z-index:3;
+}
+
+.banner.active header #toggle:before {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition:.5s;
+    background: #6d3271;
+    height: 15px;
+}
+
+.banner.active header #toggle:after {
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transition: .5s;
+    background: #6d3271;
+    height: 15px;
+}
+
+.banner.active {
+    transform: translateX(400px);
+}
+
+#navigation {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 400px;
+    height: 100vh;
+    background:#6d3271;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+    opacity: 0;
+}
+
+#navigation.active {
+    left:0px;
+    opacity: 1;
+    transition: 1s;
+}
+
+#navigation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#navigation ul li {
+    list-style-type: none;
+}
+
+#navigation ul li a {
+    color:#fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size:2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#navigation ul li a:hover {
+    color:#000;
+}
+
+#navigation ul li a.active-link {
+    color:#000;
+}
+
+#navigation ul li a.active-link:hover{
+    color:rgba(0, 0, 0, .3)
+}
+
+.content {
+    max-width: 900px;
+}
+
+.content h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.content h2 span {
+    color: #6d3271;
+    font-size: 1.2em;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-shadow:0 0 1px rgba(109,50,113,1),
+                0 0 2px rgba(109,50,113,1),
+                0 0 3px rgba(109,50,113,1),
+                0 0 4px rgba(109,50,113,1);
+}
+
+.content a,
+input[type="submit"] {
+    position: relative;
+    display:inline-block;
+    margin-top:10px;
+    background: rgba(109,50,113,.8);
+    border:1px solid #fff;
+    color:#fff;
+    padding:10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: .5s;
+}
+.content a:hover,
+input[type="submit"]:hover {
+    background:rgba(255,255,255, .8);
+    border:1px solid #6d3271cc;
+    color: #6d3271;
+    transition: .5s;
+}
+
+.sci {
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    right: 150px;
+}
+
+.sci li {
+    list-style-type: none;
+}
+
+.sci li a {
+    position:relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border:1px solid #fff;
+    margin:10px 0 0;
+}
+
+.sci li a:hover {
+    background:#fff;
+}
+
+.sci li a img {
+    max-width: 20px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+
+/* About Section */
+
+.content .skills {
+    width:600px;
+    margin: 20px 0px;
+    color:white;
+}
+
+
+/* Skills section */
+
+
+.skillBox {
+    box-sizing: border-box;
+    width:100%;
+    margin:5px 0;
+}
+
+.skillBox p {
+    color:#fff;
+    text-transform: uppercase;
+    margin:0 0 5px;
+}
+
+.skillBox p:nth-child(2){
+    float:right;
+    position: relative;
+    top:-25px;
+}
+
+.skill {
+    background: #6d3271cc;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255, .5);
+}
+
+.skill_level {
+    background: rgba(255,255,255, .5);
+    width: 100%;
+    height: 5px;
+}
+
+/* Contact Section */
+
+
+.container {
+    width: 90%;
+}
+
+.container h2 {
+    width: 100%;
+    color: rgba(109,50,113,.8);
+    font-size: 36px;
+}
+
+.container .row100 {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(autofit,minmax(300px,1fr));
+    
+}
+
+.container .row100 .col {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin:30px 0 10px;
+    transition: .5s;
+}
+
+.container .row100 .inputBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color:rgba(109,50,113,.8);
+}
+
+.container .row100 .inputBox input,
+.container .row100 .inputBox.textarea textarea  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border:none;
+    outline:none;
+    font-size: 18px;
+    padding: 0 18px;
+    z-index: 1;
+    color: #000;
+    
+}
+
+.container .row100 .inputBox .text {
+    position: absolute;
+    color: white;
+    top:0;
+    left:0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 18px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+
+}
+
+.container .row100 .inputBox input:focus + .text,
+.container .row100 .inputBox input:valid + .text {
+    top: -35px;
+    left:-10px;
+
+}
+
+.container .row100 .inputBox .line {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(109,50,113,.8);
+    transition: .5s;
+    pointer-events: none;
+}
+
+.container .row100 .inputBox input:focus ~ .line,
+.container .row100 .inputBox input:valid ~ .line {
+    height: 100%;
+} 
+
+.container .row100 .inputBox.textarea {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding:10px 0;
+}
+
+.container .row100 .inputBox textarea:focus + .text,
+.container .row100 .inputBox textarea:valid + .text {
+    top: -35px;
+    left:-10px;
+}
+
+.container .row100 .inputBox textarea:focus ~ .line,
+.container .row100 .inputBox textarea:valid ~ .line {
+    height: 100%;
+} 
+
+.container .row100 .inputBox.textarea textarea {
+    height: 100%;
+    resize: none;
+}
+
+.content .portofolio-box h3 {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.content .portofolio-box a {
+    position: relative;
+    display:inline-block;
+    margin-top:10px;
+    background: rgba(255,255,255, .8);
+    border:1px solid rgba(109,50,113,.8);
+    color:black;
+    padding:5px 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.content .portofolio-box a:hover {
+    background:rgba(109, 50, 113, 0.8);
+    border:1px solid rgba(109, 50, 113, 0.8);
+    color: rgba(255,255,255, .8);
+    transition: .5s;
+}
+
+@media (max-width:767px){
+    header {
+        padding:20px 50px;
+    }
+    .banner {
+        padding:70px 50px 150px;
+    }
+    .sm-padding {
+        padding:120px 50px 150px;
+    }
+    .banner h2 {
+        font-size: 1.5em;
+    }
+    .banner .content p,
+    .banner .content a {
+        font-size: 1.1em;
+        margin-bottom: 0px;
+        /* text-align: justify; */
+    }
+    .banner.active {
+        transform: translateX(250px);
+    }
+    #navigation {
+        width: 250px;
+    }
+    #navigation ul li a {
+        font-size: 1.5em;
+        margin:5px 0;
+    }
+    .sci {
+        position:absolute;
+        bottom:80px;
+        right:initial;
+        flex-direction: row;
+    }
+    .sci li a {
+        margin:initial;
+        margin-right: 10px;
+    }
+    .content .skills {
+        margin: 10px 0;
+        width: 300px;
+    }
+    .skillBox p:nth-child(2){
+        top:-20px;
+    }
+    .content .portofolio-box p {
+        font-size:.9em;
+    }
+}
